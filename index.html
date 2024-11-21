@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+
+
+  <script>
+    // Toggle Menu for Mobile
+    function toggleMenu() {
+      const menu = document.getElementById("mobile-menu");
+      const hamburgerIcon = document.getElementById("hamburger-icon");
+      const closeIcon = document.getElementById("close-icon");
+      menu.classList.toggle("hidden");
+      hamburgerIcon.classList.toggle("hidden");
+      closeIcon.classList.toggle("hidden");
+    }
+  </script>
+  <style>
+    /* Add custom animations */
+    .hover-transform:hover {
+      transform: scale(1.05);
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+  <title>Responsive Navbar</title>
+</head>
+
+<body class="bg-black text-white">
+  <!-- Navbar -->
+  <nav class="bg-black text-white px-6 py-4">
+    <div class="container mx-auto flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <img class="w-6/1 h-20" src="assest/uni.jpeg">
+      </div>
+
+      <!-- Menu for larger screens -->
+      <div class="hidden md:flex space-x-8">
+        <a href="#about" class="hover:text-yellow-500 transition">About us</a>
+        <a href="#work" class="hover:text-yellow-500 transition">Our work</a>
+        <a href="#services" class="hover:text-yellow-500 transition">Services</a>
+        <a href="#careers" class="hover:text-yellow-500 transition">Careers</a>
+      </div>
+
+      <!-- Social icons -->
+      <div class="hidden md:flex space-x-4">
+        <a href="#instagram" class="hover:text-yellow-500 transition">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#facebook" class="hover:text-yellow-500 transition">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="#linkedin" class="hover:text-yellow-500 transition">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+
+      <!-- Hamburger Menu for Mobile -->
+      <button class="md:hidden text-yellow-500 focus:outline-none" onclick="toggleMenu()">
+        <svg id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+        <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden flex flex-col mt-4 space-y-4">
+      <a href="#about" class="hover:text-yellow-500 transition">About us</a>
+      <a href="#work" class="hover:text-yellow-500 transition">Our work</a>
+      <a href="#services" class="hover:text-yellow-500 transition">Services</a>
+      <a href="#careers" class="hover:text-yellow-500 transition">Careers</a>
+
+      <div class="flex space-x-4 mt-4">
+        <a href="#instagram" class="hover:text-yellow-500 transition">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#facebook" class="hover:text-yellow-500 transition">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="#linkedin" class="hover:text-yellow-500 transition">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+    </div>
+  </nav>
+</body>
+
+<!-- Content (for demonstration) -->
+
+<!--Footer-->
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-white">
+  <!-- Footer Grid Section -->
+  <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-6 py-10">
+
+    <!-- Contact Info -->
+    <div>
+      <h4 class="text-orange-500 text-lg font-semibold mb-4">CONTACT INFO</h4>
+      <ul class="space-y-4 text-sm">
+        <!-- Address -->
+        <li class="flex items-start space-x-3">
+          <i class="fas fa-map-marker-alt text-orange-500"></i>
+          <span class="hover:text-orange-500">
+            Family World Tower, 2/6, Sir Sayed Road (Mirpur Road), Asad Gate
+          </span>
+        </li>
+        <!-- Email -->
+        <li class="flex items-start space-x-3">
+          <i class="fas fa-envelope text-orange-500"></i>
+          <a href="mailto:uniworldsolutionsbd@gmail.com" class="hover:text-orange-500">
+            uniworldsolutionsbd@gmail.com
+          </a>
+        </li>
+        <!-- Phone -->
+        <li class="flex items-start space-x-3">
+          <i class="fas fa-phone text-orange-500"></i>
+          <a href="tel:+8801757692826" class="hover:text-orange-500">
+            +88 01757692826
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- About Company -->
+    <div>
+      <h4 class="text-orange-500 text-lg font-semibold mb-4">ABOUT COMPANY</h4>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#" class="hover:text-orange-500">About Us</a></li>
+        <li><a href="#" class="hover:text-orange-500">Leadership</a></li>
+        <li><a href="#" class="hover:text-orange-500">Careers</a></li>
+        <li><a href="#" class="hover:text-orange-500">News & Article</a></li>
+        <li><a href="#" class="hover:text-orange-500">Legal Notice</a></li>
+      </ul>
+    </div>
+
+    <!-- Support -->
+    <div>
+      <h4 class="text-orange-500 text-lg font-semibold mb-4">SUPPORT</h4>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#" class="hover:text-orange-500">Help Center</a></li>
+        <li><a href="#" class="hover:text-orange-500">FAQ</a></li>
+        <li><a href="#" class="hover:text-orange-500">My Account</a></li>
+        <li><a href="#" class="hover:text-orange-500">Contact Us</a></li>
+        <li><a href="#" class="hover:text-orange-500">Get an Appointment</a></li>
+      </ul>
+    </div>
+
+    <!-- Newsletter -->
+    <div>
+      <h4 class="text-orange-500 text-lg font-semibold mb-4">NEWSLETTER</h4>
+      <p class="text-sm mb-4">
+        Sign up for our newsletter to get updated information, news, and free insight.
+      </p>
+      <form class="flex flex-col">
+        <input type="email" placeholder="Enter your business email"
+          class="p-3 mb-4 rounded bg-gray-100 text-gray-900 focus:outline-none focus:ring-2 focus:ring-orange-500" />
+        <button type="submit" class="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-4 rounded">
+          Sign Up
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer Bottom Bar -->
+  <div class="bg-orange-500 text-white text-sm">
+    <div class="container mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center space-x-2">
+        <img class="w-20 h-auto" src="assest/uni.jpeg" alt="Company Logo">
+      </div>
+
+      <!-- Links -->
+      <div class="flex flex-col md:flex-row items-center md:space-x-6 mt-4 md:mt-0">
+        <a href="#" class="hover:underline">Terms of Use</a>
+        <a href="#" class="hover:underline">Privacy Policy</a>
+      </div>
+
+      <!-- Copyright -->
+      <div class="text-center md:text-right mt-4 md:mt-0">
+        © 2024 UniWorld Company Ltd. All rights reserved.
+      </div>
+    </div>
+  </div>
+</footer>
+<!--Footer-->
+</body>
+
+</html>
