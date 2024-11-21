@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+
+    <script>
+        // Toggle Menu for Mobile
+        function toggleMenu() {
+            const menu = document.getElementById("mobile-menu");
+            const hamburgerIcon = document.getElementById("hamburger-icon");
+            const closeIcon = document.getElementById("close-icon");
+            menu.classList.toggle("hidden");
+            menu.classList.toggle("fade-in");
+            hamburgerIcon.classList.toggle("hidden");
+            closeIcon.classList.toggle("hidden");
+        }
+    </script>
+    <style>
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        /* Hover Transform */
+        .hover-transform:hover {
+            transform: scale(1.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        nav a {
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #FF0000;
+
+        }
+
+        .map-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            /* Aspect ratio 16:9 */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
+    <title>Responsive Navbar</title>
+</head>
+
+<body class="bg-white text-black">
+    <!-- Navbar -->
+    <nav class="bg-white text-black px-6 py-4">
+        <div class="container mx-auto flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <img class="w-6/1 h-20 hover-transform" src="assest/uni.jpeg" alt="Logo">
+            </div>
+
+            <!-- Menu for larger screens -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="hover:text-red-500 transition">About us</a>
+                <a href="#work" class="hover:text-red-500 transition">Product Us</a>
+                <a href="#services" class="hover:text-red-500 transition">Industry Solutions</a>
+                <a href="#careers" class="hover:text-red-500 transition">Blog</a>
+                <a href="contact.html" class="hover:text-red-500 transition">Contact Us</a>
+            </div>
+
+            <!-- Social icons -->
+            <div class="hidden md:flex space-x-4">
+                <a href="#instagram" class="hover:text-red-500 transition">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#facebook" class="hover:text-red-500 transition">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="#linkedin" class="hover:text-red-500 transition">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+
+            <!-- Hamburger Menu for Mobile -->
+            <button class="md:hidden text-red-500 focus:outline-none" onclick="toggleMenu()">
+                <svg id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+                <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden flex flex-col mt-4 space-y-4">
+            <a href="#about" class="hover:text-red-500 transition">About us</a>
+            <a href="#work" class="hover:text-red-500 transition">Products Us</a>
+            <a href="#services" class="hover:text-red-500 transition">Industry Solutions</a>
+            <a href="#careers" class="hover:text-red-500 transition">Blog</a>
+            <a href="#careers" class="hover:text-red-500 transition">Contact Us</a>
+
+            <div class="flex space-x-4 mt-4">
+                <a href="#instagram" class="hover:text-red-500 transition">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#facebook" class="hover:text-red-500 transition">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="#linkedin" class="hover:text-red-500 transition">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-4 py-8">
+        <!-- Title and Description -->
+        <div class="text-center mb-8">
+            <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">Get in Touch.</h1>
+            <p class="text-gray-600 text-sm sm:text-base lg:text-lg">
+                Uniworld Solutions Bangladesh stands as a trusted leader in the manufacturing, importing, and
+                distribution of high-quality adhesives and chemicals. Renowned for excellence and innovation, we deliver
+                reliable solutions tailored to meet diverse industrial and commercial needs.
+
+            </p>
+        </div>
+
+        <!-- Content Section -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <!-- Left Section: Contact Info -->
+            <div class="space-y-6">
+                <!-- Headquarters -->
+                <div>
+                    <h2 class="font-bold text-lg sm:text-xl">Headquarters</h2>
+                    <p class="text-gray-600 flex items-center text-sm sm:text-base">
+                        <span class="text-orange-500 mr-2">📍</span>
+                        Family World Tower, 2/6, Sir Sayed Road (Mirpur Road), Asad Gate
+                    </p>
+                </div>
+
+                <!-- Contact Information -->
+                <div>
+                    <h2 class="font-bold text-lg sm:text-xl">Contact Information</h2>
+                    <p class="text-gray-600 flex items-center text-sm sm:text-base">
+                        <span class="text-orange-500 mr-2">✉️</span>
+                        uniworldsolutionsbd@gmail.com
+                    </p>
+                    <p class="text-gray-600 flex items-center text-sm sm:text-base">
+                        <span class="text-orange-500 mr-2 ">📞</span>
+                        +88 01757692826
+                    </p>
+                </div>
+            </div>
+
+            <!-- Right Section: Image -->
+            <div class="relative ">
+                <img src="assest/medicine.svg" alt="Blueprint" />
+            </div>
+        </div>
+    </div>
+
+
+    <div class="bg-red-500 text-white py-12">
+        <div class="container mx-auto px-4">
+          <!-- Header Section -->
+          <div class="text-center mb-8">
+            <p class="text-white uppercase tracking-widest font-bold mb-2">Send us a message</p>
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">We're here to help.</h2>
+            
+          </div>
+      
+          <!-- Form Section -->
+          <div class="max-w-4xl mx-auto">
+            <form class="space-y-6">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <!-- Name -->
+                <div>
+                  <label class="block text-sm font-semibold mb-1" for="name">Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    placeholder="Name"
+                    class="w-full px-4 py-3 rounded-md bg-gray-800 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  />
+                </div>
+                <!-- Company -->
+                <div>
+                  <label class="block text-sm font-semibold mb-1" for="company">Company</label>
+                  <input
+                    type="text"
+                    id="company"
+                    placeholder="Company"
+                    class="w-full px-4 py-3 rounded-md bg-gray-800 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  />
+                </div>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <!-- Phone -->
+                <div>
+                  <label class="block text-sm font-semibold mb-1" for="phone">Phone</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Phone"
+                    class="w-full px-4 py-3 rounded-md bg-gray-800 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  />
+                </div>
+                <!-- Email -->
+                <div>
+                  <label class="block text-sm font-semibold mb-1" for="email">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="Email"
+                    class="w-full px-4 py-3 rounded-md bg-gray-800 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  />
+                </div>
+              </div>
+              <!-- Message -->
+              <div>
+                <label class="block text-sm font-semibold mb-1" for="message">Message</label>
+                <textarea
+                  id="message"
+                  placeholder="Message"
+                  rows="4"
+                  class="w-full px-4 py-3 rounded-md bg-gray-800 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500 required"
+                ></textarea>
+              </div>
+              <!-- Submit Button -->
+              <div>
+                <button
+                  type="submit"
+                  class="sm:w-auto px-6 py-3 bg-gray-800 text-white rounded-md font-semibold hover:bg-red-600 focus:outline-none focus:ring-4 focus:ring-orange-300"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+
+
+    <!-- Footer -->
+    <footer class="bg-white text-black">
+        <!-- Footer Grid Section -->
+        <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-6 py-10">
+
+            <!-- Contact Info -->
+            <div>
+                <h4 class="text-red-500 text-lg font-semibold mb-4">Address</h4>
+                <ul class="space-y-4 text-sm">
+                    <!-- Address -->
+                    <li class="flex items-start space-x-3">
+                        <i class="fas fa-map-marker-alt text-red-500"></i>
+                        <span class="hover:text-red-500">
+                            Family World Tower, 2/6, Sir Sayed Road (Mirpur Road), Asad Gate
+                        </span>
+                    </li>
+                    <!-- Email -->
+                    <li class="flex items-start space-x-3">
+                        <i class="fas fa-envelope text-red-500"></i>
+                        <a href="mailto:uniworldsolutionsbd@gmail.com" class="hover:text-orange-500">
+                            uniworldsolutionsbd@gmail.com
+                        </a>
+                    </li>
+                    <!-- Phone -->
+                    <li class="flex items-start space-x-3">
+                        <i class="fas fa-phone text-red-500"></i>
+                        <a href="tel:+8801757692826" class="hover:text-red-500">
+                            +88 01757692826
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- About Company -->
+            <div>
+                <h4 class="text-red-500 text-lg font-semibold mb-4">ABOUT COMPANY</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-red-500">About Us</a></li>
+                    <li><a href="#" class="hover:text-red-500">Products Us</a></li>
+                    <li><a href="#" class="hover:text-red-500">Careers</a></li>
+                    <li><a href="#" class="hover:text-red-500">News & Article</a></li>
+                    <li><a href="#" class="hover:text-red-500">Legal Notice</a></li>
+                </ul>
+            </div>
+
+            <!-- Support -->
+            <div>
+                <h4 class="text-red-500 text-lg font-semibold mb-4">SUPPORT</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-red-500">Help Center</a></li>
+                    <li><a href="#" class="hover:text-red-500">FAQ</a></li>
+                    <li><a href="#" class="hover:text-red-500">My Account</a></li>
+                    <li><a href="#" class="hover:text-red-500">Contact Us</a></li>
+                    <li><a href="#" class="hover:text-red-500">Get an Appointment</a></li>
+                </ul>
+            </div>
+
+            <!-- Newsletter -->
+            <div>
+                <h4 class="text-red-500 text-lg font-semibold mb-4">Connect With Us</h4>
+                <!-- Social icons -->
+                <div class="flex space-x-4 mx-12">
+                    <a href="#instagram" class="hover:text-red-500 transition">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#facebook" class="hover:text-red-500 transition">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#linkedin" class="hover:text-red-500 transition">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+                <div class="map-container mt-2">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.83543450958!2d-122.41941608468163!3d37.77492977975915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064b8e4f1e1%3A0x89b1a245a99c81bb!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2sus!4v1616430976813!5m2!1sen!2sus"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom Bar -->
+
+        <!-- Copyright -->
+        <div class="text-center text-sm md:text-base lg:text-lg px-4 py-2">
+            © 2024 UniWorld Company Ltd. All rights reserved.
+        </div>
+        </div>
+        </div>
+    </footer>
+    <!--Footer-->
+</body>
+
+</html>

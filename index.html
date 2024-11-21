@@ -55,23 +55,25 @@
 
     nav a:hover {
       color: #FF0000;
-      
-    }
-    .map-container {
-    position: relative;
-    padding-bottom: 56.25%; /* Aspect ratio 16:9 */
-    height: 0;
-    overflow: hidden;
-  }
 
-  .map-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-  }
+    }
+
+    .map-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      /* Aspect ratio 16:9 */
+      height: 0;
+      overflow: hidden;
+    }
+
+    .map-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
   </style>
   <title>Responsive Navbar</title>
 </head>
@@ -91,7 +93,7 @@
         <a href="#work" class="hover:text-red-500 transition">Product Us</a>
         <a href="#services" class="hover:text-red-500 transition">Industry Solutions</a>
         <a href="#careers" class="hover:text-red-500 transition">Blog</a>
-        <a href="#careers" class="hover:text-red-500 transition">Contact Us</a>
+        <a href="contact.html" class="hover:text-red-500 transition">Contact Us</a>
       </div>
 
       <!-- Social icons -->
@@ -183,7 +185,7 @@
         <h4 class="text-red-500 text-lg font-semibold mb-4">ABOUT COMPANY</h4>
         <ul class="space-y-2 text-sm">
           <li><a href="#" class="hover:text-red-500">About Us</a></li>
-          <li><a href="#" class="hover:text-red-500">Leadership</a></li>
+          <li><a href="#" class="hover:text-red-500">Products Us</a></li>
           <li><a href="#" class="hover:text-red-500">Careers</a></li>
           <li><a href="#" class="hover:text-red-500">News & Article</a></li>
           <li><a href="#" class="hover:text-red-500">Legal Notice</a></li>
@@ -205,30 +207,34 @@
       <!-- Newsletter -->
       <div>
         <h4 class="text-red-500 text-lg font-semibold mb-4">Connect With Us</h4>
-        <p class="text-sm mb-4">
-          Sign up for our newsletter to get updated information, news, and free insight.
-        </p>
-        
-        <div class="map-container">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.83543450958!2d-122.41941608468163!3d37.77492977975915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064b8e4f1e1%3A0x89b1a245a99c81bb!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2sus!4v1616430976813!5m2!1sen!2sus" 
-            width="600" 
-            height="450" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy">
+        <!-- Social icons -->
+        <div class="flex space-x-4 mx-12">
+          <a href="#instagram" class="hover:text-red-500 transition">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#facebook" class="hover:text-red-500 transition">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a href="#linkedin" class="hover:text-red-500 transition">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </div>
+        <div class="map-container mt-2">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.83543450958!2d-122.41941608468163!3d37.77492977975915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064b8e4f1e1%3A0x89b1a245a99c81bb!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2sus!4v1616430976813!5m2!1sen!2sus"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy">
           </iframe>
         </div>
       </div>
     </div>
 
     <!-- Footer Bottom Bar -->
-    
-        <!-- Copyright -->
-        <div class="text-center">
-          © 2024 UniWorld Company Ltd. All rights reserved.
-        </div>
-      </div>
+
+    <!-- Copyright -->
+    <div class="text-center text-sm md:text-base lg:text-lg px-4 py-2">
+      © 2024 UniWorld Company Ltd. All rights reserved.
+    </div>
+    </div>
     </div>
   </footer>
   <!--Footer-->
