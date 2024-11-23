@@ -83,10 +83,13 @@
   <nav class="bg-white text-black px-6 py-4">
     <div class="container mx-auto flex items-center justify-between">
       <!-- Logo -->
-      <div class="flex items-center">
-        <img class="w-6/1 h-20 hover-transform" src="assest/uni.jpeg" alt="Logo">
+      <div class="flex items-center justify-center md:justify-start -mx-6 p-4">
+        <img 
+          class="w-6/1 h-20 md:w-6/1  md:h-20 lg:w-6/1 lg:h-20 hover:scale-105 transform transition duration-300 ease-in-out" 
+          src="assest/uni.jpeg" 
+          alt="Logo"
+        >
       </div>
-
       <!-- Menu for larger screens -->
       <div class="hidden md:flex space-x-8">
         <a href="#about" class="hover:text-red-500 transition">About us</a>
@@ -144,7 +147,28 @@
     </div>
   </nav>
 
-
+  <div id="hero" class="relative bg-gray-800 text-white h-screen flex items-center justify-center">
+    <div id="content" class="text-center p-6 transition-transform transform">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4">Welcome to Our Site</h1>
+      <p class="text-lg md:text-2xl mb-6">We create amazing experiences for everyone.</p>
+      <button class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg shadow-md">
+        Get Started
+      </button>
+    </div>
+  </div>
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#hero').on('mouseenter', function() {
+        $('#content').addClass('scale-105');
+      });
+      $('#hero').on('mouseleave', function() {
+        $('#content').removeClass('scale-105');
+      });
+    });
+  </script>
+  
   <!--Footer-->
 
   <!-- Footer -->
@@ -159,21 +183,21 @@
           <!-- Address -->
           <li class="flex items-start space-x-3">
             <i class="fas fa-map-marker-alt text-red-500"></i>
-            <span class="hover:text-red-500">
+            <span class="hover:text-red-500 -mt-2">
               Family World Tower, 2/6, Sir Sayed Road (Mirpur Road), Asad Gate
             </span>
           </li>
           <!-- Email -->
           <li class="flex items-start space-x-3">
             <i class="fas fa-envelope text-red-500"></i>
-            <a href="mailto:uniworldsolutionsbd@gmail.com" class="hover:text-orange-500">
+            <a href="mailto:uniworldsolutionsbd@gmail.com" class="hover:text-orange-500 -mt-1">
               uniworldsolutionsbd@gmail.com
             </a>
           </li>
           <!-- Phone -->
           <li class="flex items-start space-x-3">
             <i class="fas fa-phone text-red-500"></i>
-            <a href="tel:+8801757692826" class="hover:text-red-500">
+            <a href="tel:+8801757692826" class="hover:text-red-500 -mt-1">
               +88 01757692826
             </a>
           </li>
@@ -206,7 +230,7 @@
 
       <!-- Newsletter -->
       <div>
-        <h4 class="text-red-500 text-lg font-semibold mb-4">Connect With Us</h4>
+        <h4 class="text-red-500 text-lg font-semibold mb-4">CONNECT WITH US</h4>
         <!-- Social icons -->
         <div class="flex space-x-4 mx-12">
           <a href="#instagram" class="hover:text-red-500 transition">

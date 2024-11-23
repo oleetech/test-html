@@ -88,8 +88,9 @@
     <nav class="bg-white text-black px-6 py-4">
         <div class="container mx-auto flex items-center justify-between">
             <!-- Logo -->
-            <div class="flex items-center">
-                <img class="w-6/1 h-20 hover-transform" src="assest/uni.jpeg" alt="Logo">
+            <div class="flex items-center justify-center md:justify-start -mx-6 p-4">
+                <img class="w-6/1 h-20 md:w-6/1  md:h-20 lg:w-6/1 lg:h-20 hover:scale-105 transform transition duration-300 ease-in-out"
+                    src="assest/uni.jpeg" alt="Logo">
             </div>
 
             <!-- Menu for larger screens -->
@@ -148,11 +149,107 @@
             </div>
         </div>
     </nav>
+    <div id="contact-hero" class="relative bg-gradient-to-br from-red-600 to-red-800 h-screen flex flex-col items-center justify-center text-white text-center rounded">
+        <!-- Animated Background Circles -->
+        <div class="absolute inset-0 overflow-hidden">
+          <div class="absolute w-40 h-40 bg-red-400 opacity-20 rounded-full top-10 left-20 animate-pulse"></div>
+          <div class="absolute w-64 h-64 bg-red-500 opacity-20 rounded-full bottom-20 right-10 animate-bounce"></div>
+          <div class="absolute w-48 h-48 bg-red-300 opacity-20 rounded-full top-1/3 left-1/3 animate-spin-slow"></div>
+        </div>
+      
+        <!-- Hero Content -->
+        <div id="hero-content" class="relative z-10 p-6 max-w-3xl transition-all transform scale-90 opacity-0">
+          <h1 class="text-5xl md:text-7xl font-extrabold mb-6">Contact Us</h1>
+          <p class="text-lg md:text-2xl mb-6">
+            Reach out to us! Fill out the form below or email us at 
+            <a href="mailto:support@example.com" class="text-white hover:text-white transition">uniworldsolutionsbd@gmail.com</a>
+          </p>
+          <button id="contact-btn" class="px-8 py-4 bg-red-600 hover:bg-red-900 text-white text-lg rounded-lg shadow-lg transition-transform transform hover:scale-105">
+            Get in Touch
+          </button>
+        </div>
+      </div>
+      
+      <!-- jQuery -->
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script>
+        $(document).ready(function () {
+          // Animate hero content on page load
+          $("#hero-content")
+            .css({ opacity: 0, scale: 0.9 })
+            .animate({ opacity: 1, scale: 1 }, {
+              duration: 1200,
+              step: function (now, fx) {
+                if (fx.prop === "scale") {
+                  $(this).css("transform", `scale(${now})`);
+                }
+              },
+            });
+      
+          // Button hover effect
+          $("#contact-btn").hover(
+            function () {
+              $(this).animate({ scale: 1.1 }, {
+                duration: 200,
+                step: function (now, fx) {
+                  $(this).css("transform", `scale(${now})`);
+                },
+              });
+            },
+            function () {
+              $(this).animate({ scale: 1 }, {
+                duration: 200,
+                step: function (now, fx) {
+                  $(this).css("transform", `scale(${now})`);
+                },
+              });
+            }
+          );
+        });
+      </script>
+      
+   
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#hero-content")
+                .css({ opacity: 0, scale: 0.9 })
+                .animate({ opacity: 1, scale: 1 }, {
+                    duration: 1000,
+                    step: function (now, fx) {
+                        if (fx.prop === "scale") {
+                            $(this).css("transform", `scale(${now})`);
+                        }
+                    },
+                });
+
+            $("#contact-btn").hover(
+                function () {
+                    $(this).animate({ scale: 1.1 }, {
+                        duration: 200,
+                        step: function (now, fx) {
+                            $(this).css("transform", `scale(${now})`);
+                        },
+                    });
+                },
+                function () {
+                    $(this).animate({ scale: 1 }, {
+                        duration: 200,
+                        step: function (now, fx) {
+                            $(this).css("transform", `scale(${now})`);
+                        },
+                    });
+                }
+            );
+        });
+    </script>
+
 
     <div class="container mx-auto px-4 py-8">
         <!-- Title and Description -->
         <div class="text-center mb-8">
-            <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">Get in Touch.</h1>
+            <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">Get in Touch</h1>
             <p class="text-gray-600 text-sm sm:text-base lg:text-lg">
                 Uniworld Solutions Bangladesh stands as a trusted leader in the manufacturing, importing, and
                 distribution of high-quality adhesives and chemicals. Renowned for excellence and innovation, we deliver
@@ -196,86 +293,64 @@
     </div>
 
 
-    <div class="bg-red-500 text-white py-12">
+    <div class="bg-red-500 text-white py-12 rounded-sm">
         <div class="container mx-auto px-4">
-          <!-- Header Section -->
-          <div class="text-center mb-8">
-            <p class="text-white uppercase tracking-widest font-bold mb-2">Send us a message</p>
-            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">We're here to help.</h2>
-            
-          </div>
-      
-          <!-- Form Section -->
-          <div class="max-w-4xl mx-auto">
-            <form class="space-y-6">
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <!-- Name -->
-                <div>
-                  <label class="block text-sm font-semibold mb-1" for="name">Name</label>
-                  <input
-                    type="text"
-                    id="name"
-                    placeholder="Name"
-                    class="w-full px-4 py-3 rounded-md bg-gray-800 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500"
-                  />
-                </div>
-                <!-- Company -->
-                <div>
-                  <label class="block text-sm font-semibold mb-1" for="company">Company</label>
-                  <input
-                    type="text"
-                    id="company"
-                    placeholder="Company"
-                    class="w-full px-4 py-3 rounded-md bg-gray-800 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500"
-                  />
-                </div>
-              </div>
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <!-- Phone -->
-                <div>
-                  <label class="block text-sm font-semibold mb-1" for="phone">Phone</label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    placeholder="Phone"
-                    class="w-full px-4 py-3 rounded-md bg-gray-800 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500"
-                  />
-                </div>
-                <!-- Email -->
-                <div>
-                  <label class="block text-sm font-semibold mb-1" for="email">Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    placeholder="Email"
-                    class="w-full px-4 py-3 rounded-md bg-gray-800 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500"
-                  />
-                </div>
-              </div>
-              <!-- Message -->
-              <div>
-                <label class="block text-sm font-semibold mb-1" for="message">Message</label>
-                <textarea
-                  id="message"
-                  placeholder="Message"
-                  rows="4"
-                  class="w-full px-4 py-3 rounded-md bg-gray-800 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500 required"
-                ></textarea>
-              </div>
-              <!-- Submit Button -->
-              <div>
-                <button
-                  type="submit"
-                  class="sm:w-auto px-6 py-3 bg-gray-800 text-white rounded-md font-semibold hover:bg-red-600 focus:outline-none focus:ring-4 focus:ring-orange-300"
-                >
-                  Submit
-                </button>
-              </div>
-            </form>
-          </div>
+            <!-- Header Section -->
+            <div class="text-center mb-8">
+                <p class="text-white uppercase tracking-widest font-bold mb-2">Send us a message</p>
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">We're here to help.</h2>
+
+            </div>
+
+            <!-- Form Section -->
+            <div class="max-w-4xl mx-auto">
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- Name -->
+                        <div>
+                            <label class="block text-sm font-semibold mb-1" for="name">Name</label>
+                            <input type="text" id="name" placeholder="Name"
+                                class="w-full px-4 py-3 rounded-md bg-gray-800 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-100 " />
+                        </div>
+                        <!-- Company -->
+                        <div>
+                            <label class="block text-sm font-semibold mb-1" for="company">Company</label>
+                            <input type="text" id="company" placeholder="Company"
+                                class="w-full px-4 py-3 rounded-md bg-gray-800 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-100" />
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- Phone -->
+                        <div>
+                            <label class="block text-sm font-semibold mb-1" for="phone">Phone</label>
+                            <input type="tel" id="phone" placeholder="Phone"
+                                class="w-full px-4 py-3 rounded-md bg-gray-800 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-100" />
+                        </div>
+                        <!-- Email -->
+                        <div>
+                            <label class="block text-sm font-semibold mb-1" for="email">Email</label>
+                            <input type="email" id="email" placeholder="Email"
+                                class="w-full px-4 py-3 rounded-md bg-gray-800 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-100" />
+                        </div>
+                    </div>
+                    <!-- Message -->
+                    <div>
+                        <label class="block text-sm font-semibold mb-1" for="message">Message</label>
+                        <textarea id="message" placeholder="Message" rows="4"
+                            class="w-full px-4 py-3 rounded-md bg-gray-800 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-100 required"></textarea>
+                    </div>
+                    <!-- Submit Button -->
+                    <div>
+                        <button type="submit"
+                            class="sm:w-auto px-6 py-3 bg-gray-800 text-white rounded-md font-semibold hover:bg-red-600 focus:outline-none focus:ring-4 focus:ring-red-100">
+                            Submit
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
-      </div>
-      
+    </div>
+
 
 
     <!-- Footer -->
@@ -290,21 +365,21 @@
                     <!-- Address -->
                     <li class="flex items-start space-x-3">
                         <i class="fas fa-map-marker-alt text-red-500"></i>
-                        <span class="hover:text-red-500">
+                        <span class="hover:text-red-500 -mt-2">
                             Family World Tower, 2/6, Sir Sayed Road (Mirpur Road), Asad Gate
                         </span>
                     </li>
                     <!-- Email -->
                     <li class="flex items-start space-x-3">
                         <i class="fas fa-envelope text-red-500"></i>
-                        <a href="mailto:uniworldsolutionsbd@gmail.com" class="hover:text-orange-500">
+                        <a href="mailto:uniworldsolutionsbd@gmail.com" class="hover:text-orange-500 -mt-1">
                             uniworldsolutionsbd@gmail.com
                         </a>
                     </li>
                     <!-- Phone -->
                     <li class="flex items-start space-x-3">
                         <i class="fas fa-phone text-red-500"></i>
-                        <a href="tel:+8801757692826" class="hover:text-red-500">
+                        <a href="tel:+8801757692826" class="hover:text-red-500 -mt-1">
                             +88 01757692826
                         </a>
                     </li>
@@ -337,7 +412,7 @@
 
             <!-- Newsletter -->
             <div>
-                <h4 class="text-red-500 text-lg font-semibold mb-4">Connect With Us</h4>
+                <h4 class="text-red-500 text-lg font-semibold mb-4">CONNECT WITH US</h4>
                 <!-- Social icons -->
                 <div class="flex space-x-4 mx-12">
                     <a href="#instagram" class="hover:text-red-500 transition">
